@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+
+/* Style the scrollbar for webkit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 15px; /* Set the width of the scrollbar */
+    height: 15px; /* Set the height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5DC; /* Color of the track (background of the scrollbar) */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0C5450; /* Color of the scrollbar handle (thumb) */
+    border-radius: 1px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #073c3a; /* Change color when hovered */
+}
+
+
+body {
+    scrollbar-color: #0C5450 #F5F5DC; /* Thumb and track colors for Firefox */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +38,7 @@ body{
     font-weight: 200;
     color: #F5F5DC;
 }
+
 
 h1, h2, h3, h4, h6{
     font-family: "Merriweather", serif;
