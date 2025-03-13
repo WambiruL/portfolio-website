@@ -59,3 +59,48 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener('DOMContentLoaded',()=>{
     AOS.init();
 });
+
+
+//scroll to top
+// Create the button dynamically
+const scrollToTopBtn = document.createElement("button");
+scrollToTopBtn.innerText = "↑";
+scrollToTopBtn.id = "scrollToTopBtn";
+document.body.appendChild(scrollToTopBtn);
+
+// Style the button with your colors
+scrollToTopBtn.style.position = "fixed";
+scrollToTopBtn.style.bottom = "50px";
+scrollToTopBtn.style.left = "50%";
+scrollToTopBtn.style.padding = "10px 15px";
+scrollToTopBtn.style.fontSize = "20px";
+scrollToTopBtn.style.border = "none";
+scrollToTopBtn.style.borderRadius = "50%";
+scrollToTopBtn.style.backgroundColor = "#0C5450"; // Scrollbar handle color
+scrollToTopBtn.style.color = "white";
+scrollToTopBtn.style.cursor = "pointer";
+scrollToTopBtn.style.display = "none"; // Initially hidden
+scrollToTopBtn.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.8)";
+scrollToTopBtn.style.transition = "background 0.3s ease";
+
+// Change button color on hover
+scrollToTopBtn.addEventListener("mouseover", () => {
+  scrollToTopBtn.style.backgroundColor = "#073c3a"; // Hover color
+});
+scrollToTopBtn.addEventListener("mouseout", () => {
+  scrollToTopBtn.style.backgroundColor = "#0C5450"; // Default color
+});
+
+// Show button when scrolling down
+window.onscroll = function () {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+};
+
+// Scroll to the top smoothly when clicked
+scrollToTopBtn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};

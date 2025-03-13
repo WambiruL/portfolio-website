@@ -223,7 +223,7 @@ nav{
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 50vh;
+    /* height: 45vh; */
 }
 
 .process-detail:hover {
