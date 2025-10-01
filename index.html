@@ -43,9 +43,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#my-projects" id="projects-link">Projects</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#education" id="education-link">Education</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="#contact" id="contact-link">Contact</a>
                 </li>
@@ -60,12 +60,13 @@
         </div>
         <div class="hero-text">
             <h1>LORRAINE WAMBIRU</h1>
-            <p>Software Developer & UI/UX Designer</p>
+            <p>DESIGNER</p>
         </div>
         <div class="hero-socials">
+            <a href="https://www.behance.net/lorrainewambui" target="_blank"><i class="fa-brands fa-square-behance fa-lg" style="color: #ffffff;"></i></a>
             <a href="https://www.linkedin.com/in/lorraine-wambiru/" target="_blank"><i class="fa-brands fa-linkedin  fa-lg" style="color:#fff;"></i></a>
-            <a href="https://x.com/wambuiwambiru"  target="_blank"><i class="fa-brands  fa-square-x-twitter fa-lg" style="color: #fff;"></i></a>
-            <a href="https://github.com/WambiruL"  target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #fff;"></i></a>
+            <!-- <a href="https://x.com/wambuiwambiru"  target="_blank"><i class="fa-brands  fa-square-x-twitter fa-lg" style="color: #fff;"></i></a> -->
+            <!-- <a href="https://github.com/WambiruL"  target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #fff;"></i></a> -->
             <a href="mailto:wambirulorraine@gmail.com? subject=Contact%20Request"  target="_blank"><i class="fa-solid fa-envelope fa-lg" style="color: #fff;"></i></a>
         </div>
     </div>
@@ -75,19 +76,16 @@
             <h1 class="heading" id="about-me">About Me</h1>
             <div class="about-me-body">
                 <div class="about-me-description">
-                    <p>Hi there! I'm Lorraine, a developer with a 
-                        love for crafting beautiful and functional 
-                        web experiences. I enjoy problem-solving
-                        and I have a keen eye for detail. When I'm 
-                        not coding, you can find me on Pinterest 
-                        exploring  design ideas or curled up with 
-                        a good book
+                    <p>Hi there! I’m Lorraine, a designer who loves <span class="about-color-underline">bringing stories and ideas to life</span> 
+                        through clean, thoughtful visuals. I’m big on detail and making sure designs 
+                        feel <span class="about-color">intuitive and inclusive</span>. When I’m not at my desk, you’ll probably find me 
+                        <span class="about-color-underline">scrolling Pinterest</span> for fresh design inspiration or <span class="about-color-underline">curled up with a book.</span>
                     </p>
                     <a class="repository-button" href="mailto:wambirulorraine@gmail.com? subject=Contact%20Request"  target="_blank">Hire Me </a>                 
                 </div>
                 <div class="about-me-image-container">
-                    <img src="images/about-me4black.jpeg" class="image-back-2" alt="about-me-image">
-                    <img src="images/about-me4black.jpeg" class="image-back" alt="about-me-image">
+                    <!-- <img src="images/about-me4black.jpeg" class="image-back-2" alt="about-me-image">
+                    <img src="images/about-me4black.jpeg" class="image-back" alt="about-me-image"> -->
                     <img src="images/about-me4.jpeg" class="about-me-image"></span>
                     <img src="images/push-pin.png" class="push-pin" alt="push-pin">
                 </div>
@@ -111,8 +109,8 @@
                             <i class="fa-solid fa-pen-ruler fa-lg" style="color: #F5F5DC;"></i>                        
                         </div>
                         <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
-                            <h5>UI Design</h5>
-                            <p>Figma, Adobe Photoshop, Canva</p>
+                            <h5>Design</h5>
+                            <p>Figma, Adobe Suite, Canva</p>
                         </div>
                     </div>
 
@@ -142,10 +140,10 @@
                 </div>
                 <div class="soft-skills" data-aos="fade-up" data-aos-duration="400">
                     <ul>
-                        <li> Problem solving</li>
-                        <li> Collaboration</li>
-                        <li> Communication</li>
-                        <li> Critical Thinking</li>
+                        <li> Creative solutions</li>
+                        <li>Visual storytelling</li>
+                        <li> Strategic insight</li>
+                        <li> Rapid upskilling</li>
 
                     </ul>
                     
@@ -154,120 +152,422 @@
 
             <div class="my-projects" id="my-projects" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="heading">My Projects</h1>
-                <div class="project-container">
-                    <div class="project" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="project-details">
-                            <div class="project-name">
-                                <h5>Project Name:</h5>
-                                <p><em>Artisan Alley</em></p>
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openTab(event, 'featured')">Featured Work</button>
+                    <!-- <button class="tab-link" onclick="openTab(event, 'websites')">Website Designs</button> -->
+                    <button class="tab-link" onclick="openTab(event, 'all')">All</button>
+                </div>
+
+                <!-- FEATURED -->
+
+                <div id="featured" class="tab-content active">
+                    <div class="project-container">
+                        <!-- BBC Project -->
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <img src="images/hausa_day.png" alt="hausa day">
+                                <div class="project-info">
+                                    <h3>Hausa Day</h3>
+                                    <p>Honoring the rich culture, language, and heritage of the Hausa people.</p>
+                                    <a href="https://www.instagram.com/p/DNzic3QQn4B/?utm_source=ig_web_copy_link&igsh=MTZ0czNsamhlNGJ3dg==" target="_blank" class="repository-button">View Post</a>
+                                </div>
                             </div>
-                            <div class="project-image-container">
+
+                            <div class="project-card">
+                                <img src="images/ramadan.png" alt="ramadan">
+                                <div class="project-info">
+                                    <h3>Ramadan Kareem</h3>
+                                    <p>Celebrating the holy month and spreading a message of peace and unity.</p>
+                                    <a href="https://www.instagram.com/reel/DGn8V07sHS7/?utm_source=ig_web_copy_link&igsh=MWJsZWlnbXltNDdreA==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/ukaid.png" alt="UKAID">
+                                <div class="project-info">
+                                    <h3>UKAID</h3>
+                                    <p>Info-graphic highlighting UKAID’s foreign aid contributions to Africa</p>
+                                    <a href="https://www.instagram.com/p/DGnunhQsnBL/?utm_source=ig_web_copy_link&igsh=MXM1aGtxZTFmb2hmZg==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/UK_imig.PNG" alt="uk immigration">
+                                <div class="project-info">
+                                    <h3>UK Immigration</h3>
+                                    <p>Graphic breaking down who would be affected by the UK’s immigration policy</p>
+                                    <a href="https://www.instagram.com/p/DJuN_Ifhlxc/?utm_source=ig_web_copy_link&igsh=Y3hkZjEwd2lrc3hq" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/sudan_war.png" alt="sudan war">
+                                <div class="project-info">
+                                    <h3>Sudan Civil War</h3>
+                                    <p>Informative timeline graphic on the Sudan civil war</p>
+                                    <a href="https://www.instagram.com/p/DHtCUesMp1c/?utm_source=ig_web_copy_link&igsh=MXA3aWpxemduaTh3" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <!-- <div class="project-card">
+                                <img src="images/golden_boot.png" alt="Golden Boot">
+                                <div class="project-info">
+                                    <h3>WAFCON Golden Boot</h3>
+                                    <p>Sports graphic tracking the Golden Boot race for WAFCON 2024</p>
+                                    <a href="https://www.instagram.com/p/DMNiL87TFHF/?utm_source=ig_web_copy_link&igsh=eGt0NjM1aDV3bG93" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div> -->
+
+                            <div class="project-card">
+                                <img src="images/jailed.png" alt="Jailed">
+                                <div class="project-info">
+                                    <h3>Jailed</h3>
+                                    <p>A hard-hitting graphic on how African women are punished for poverty</p>
+                                    <a href="https://www.instagram.com/p/DHdLIMoRC4M/?utm_source=ig_web_copy_link&igsh=YXRycTA5NGdmaDFo" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/s.sudan.png" alt="south sudan">
+                                <div class="project-info">
+                                    <h3>South Sudan rivals</h3>
+                                    <p>Profile graphic on South Sudan’s rival leaders and key facts</p>
+                                    <a href="https://www.instagram.com/p/DHvt75nRBkS/?utm_source=ig_web_copy_link&igsh=MW56Ync5dDJyZjBocA==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/new_media.png" alt="new media">
+                                <div class="project-info">
+                                    <h3>New Media</h3>
+                                    <p>Graphics on the rise of citizen journalism and activism across Africa</p>
+                                    <a href="https://www.instagram.com/p/DLcSd3APweU/?utm_source=ig_web_copy_link&igsh=MW41MzZkdWJrcTR0dA==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Add any other branding/graphic projects here -->
+                    </div>
+                </div>
+
+                <!-- WEBSITE DESIGNS -->
+                <!-- <div id="websites" class="tab-content">
+                    <div class="project-container">
+                        <div class="projects-grid">
+
+                            
+
+                            <div class="project-card">
                                 <img src="images/1.png" alt="artisanalley-image" class="project-image">  
-                            </div>
-                            <div class="project-description">
-                                <h5>About:</h5>
-                                <p><em>An e-commerce platform 
+                                <div class="project-info">
+                                  <h3>Artisan Alley</h3>
+                                  <p>An e-commerce platform 
                                     that connects local artisans
-                                    to clients</em>
-                                </p>
-                                <a href="artisan.html" target="_blank" class="repository-button">View Details</a>
-                                <a href="https://www.behance.net/gallery/205604191/Artisan-Alley-Local-Artisan-MarketPlace" target="_blank" class="repository-button">View Design</a>
+                                    to clients</p>
+                                    <a href="https://www.behance.net/gallery/205604191/Artisan-Alley-Local-Artisan-MarketPlace" target="_blank" class="repository-button">View Project</a>
+                                    <a href="artisan.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="project" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="project-details">
-                            <div class="project-name">
-                                <h5>Project Name:</h5>
-                                <p><em>Public Pulse</em></p>
-                            </div>
-                            <div class="project-image-container">
+                            <div class="project-card">
                                 <img src="images/2.png" alt="public-pulse-image" class="project-image">  
+                                <div class="project-info">
+                                  <h3>Public Pulse</h3>
+                                  <p>An AI-Powered Citizen Feedback 
+                                    and Complaint System</p>
+                                    <a href="https://www.behance.net/gallery/205605743/Public-Pulse-An-AI-powered-Citizen-Feedback-System" target="_blank" class="repository-button">View Project</a>
+                                    <a href="public.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
                             </div>
-                            <div class="project-description">
-                                <h5>About:</h5>
-                                <p><em>An AI-Powered Citizen Feedback 
-                                    and Complaint System</em>
-                                </p>
-                                <a href="public.html" target="_blank" class="repository-button">View Details</a>
-                                <a href="https://www.behance.net/gallery/205605743/Public-Pulse-An-AI-powered-Citizen-Feedback-System" target="_blank" class="repository-button">View Design</a>
-                                <!-- <a href="https://github.com/WambiruL/public-pulsev2.git" target="_blank" class="repository-button">View Repository</a> -->
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="project" data-aos="fade-up" data-aos-duration="2000">
-                        <div class="project-details">
-                            <div class="project-name">
-                                <h5>Project Name:</h5>
-                                <p><em>Solara</em></p>
+                            <div class="project-card">
+                                <img src="images/4.png" alt="solara-image" class="project-image solara"> 
+                                <div class="project-info">
+                                  <h3>Solara</h3>
+                                  <p>An AI-Powered Mental 
+                                    Health Platform for Students</p>
+                                    <a href="https://www.behance.net/gallery/208762161/Solara-AI-An-AI-powered-Mental-health-Therapist" target="_blank" class="repository-button">View Project</a>
+                                    <a href="solara.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
                             </div>
-                            <div class="project-image-container">
-                                <img src="images/4.png" alt="solara-image" class="project-image solara">  
-                            </div>
-                            <div class="project-description">
-                                <h5>About:</h5>
-                                <p><em>An AI-Powered Mental 
-                                    Health Platform for Students</em>
-                                </p>
-                                <a href="solara.html" target="_blank" class="repository-button">View Details</a>
-                                <a href="https://www.behance.net/gallery/208762161/Solara-AI-An-AI-powered-Mental-health-Therapist" target="_blank" class="repository-button">View Design</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="project" data-aos="fade-up" data-aos-duration="2500">
-                        <div class="project-details">
-                            <div class="project-name">
-                                <h5>Project Name:</h5>
-                                <p><em>Anonytix</em></p>
+                            <div class="project-card">
+                                <img src="images/3.png" alt="anonytix-image" class="project-image">
+                                <div class="project-info">
+                                  <h3>Anonytix</h3>
+                                  <p>An Anonymous Feedback Platform for students to their institutions</p>
+                                    <a href="https://www.behance.net/gallery/211499867/Anonytix-Student-Feedback-Platform" target="_blank" class="repository-button">View Project</a>
+                                    <a href="anonytix.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
                             </div>
-                            <div class="project-image-container">
-                                <img src="images/3.png" alt="anonytix-image" class="project-image">  
+
+                        </div> -->
+                        <!-- <div class="project" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="project-details">
+                                <div class="project-name">
+                                    <h5>Project Name:</h5>
+                                    <p><em>Artisan Alley</em></p>
+                                </div>
+                                <div class="project-image-container">
+                                    <img src="images/1.png" alt="artisanalley-image" class="project-image">  
+                                </div>
+                                <div class="project-description">
+                                    <h5>About:</h5>
+                                    <p><em>An e-commerce platform 
+                                        that connects local artisans
+                                        to clients</em>
+                                    </p>
+                                    <a href="artisan.html" target="_blank" class="repository-button">View Details</a>
+                                    <a href="https://www.behance.net/gallery/205604191/Artisan-Alley-Local-Artisan-MarketPlace" target="_blank" class="repository-button">View Design</a>
+                                </div>
                             </div>
-                            <div class="project-description">
-                                <h5>About:</h5>
-                                <p><em>An Anonymous Feedback Platform for students</em>
-                                </p>
-                                <a href="anonytix.html" target="_blank" class="repository-button">View Details</a>
-                                <a href="https://www.behance.net/gallery/211499867/Anonytix-Student-Feedback-Platform" target="_blank" class="repository-button">View Design</a>
-                                <!-- <a href="https://github.com/WambiruL/anonytix.git" target="_blank" class="repository-button">View Repository</a> -->
+                        </div> -->
+
+                        <!-- <div class="project" data-aos="fade-up" data-aos-duration="1500">
+                            <div class="project-details">
+                                <div class="project-name">
+                                    <h5>Project Name:</h5>
+                                    <p><em>Public Pulse</em></p>
+                                </div>
+                                <div class="project-image-container">
+                                    <img src="images/2.png" alt="public-pulse-image" class="project-image">  
+                                </div>
+                                <div class="project-description">
+                                    <h5>About:</h5>
+                                    <p><em>An AI-Powered Citizen Feedback 
+                                        and Complaint System</em>
+                                    </p>
+                                    <a href="public.html" target="_blank" class="repository-button">View Details</a>
+                                    <a href="https://www.behance.net/gallery/205605743/Public-Pulse-An-AI-powered-Citizen-Feedback-System" target="_blank" class="repository-button">View Design</a>
+                                    <a href="https://github.com/WambiruL/public-pulsev2.git" target="_blank" class="repository-button">View Repository</a> -->
+                                <!-- </div>
                             </div>
+                        </div> --> 
+
+                        <!-- <div class="project" data-aos="fade-up" data-aos-duration="2000">
+                            <div class="project-details">
+                                <div class="project-name">
+                                    <h5>Project Name:</h5>
+                                    <p><em>Solara</em></p>
+                                </div>
+                                <div class="project-image-container">
+                                    <img src="images/4.png" alt="solara-image" class="project-image solara">  
+                                </div>
+                                <div class="project-description">
+                                    <h5>About:</h5>
+                                    <p><em>An AI-Powered Mental 
+                                        Health Platform for Students</em>
+                                    </p>
+                                    <a href="solara.html" target="_blank" class="repository-button">View Details</a>
+                                    <a href="https://www.behance.net/gallery/208762161/Solara-AI-An-AI-powered-Mental-health-Therapist" target="_blank" class="repository-button">View Design</a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="project" data-aos="fade-up" data-aos-duration="2500"> -->
+                            <!-- <div class="project-details">
+                                <div class="project-name">
+                                    <h5>Project Name:</h5>
+                                    <p><em>Anonytix</em></p>
+                                </div>
+                                <div class="project-image-container">
+                                    <img src="images/3.png" alt="anonytix-image" class="project-image">  
+                                </div> -->
+                                <!-- <div class="project-description">
+                                    <h5>About:</h5>
+                                    <p><em>An Anonymous Feedback Platform for students</em>
+                                    </p>
+                                    <a href="anonytix.html" target="_blank" class="repository-button">View Details</a>
+                                    <a href="https://www.behance.net/gallery/211499867/Anonytix-Student-Feedback-Platform" target="_blank" class="repository-button">View Design</a> -->
+                                    <!-- <a href="https://github.com/WambiruL/anonytix.git" target="_blank" class="repository-button">View Repository</a> -->
+                                <!-- </div> -->
+                            <!-- </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- ALL -->
+                <div id="all" class="tab-content">
+                    <div class="project-container">
+                        <div class="projects-grid">
+
+                            <div class="project-card">
+                                <img src="images/1.png" alt="artisanalley-image" class="project-image">  
+                                <div class="project-info">
+                                  <h3>Artisan Alley</h3>
+                                  <p>An e-commerce platform 
+                                    that connects local artisans
+                                    to clients</p>
+                                    <a href="https://www.behance.net/gallery/205604191/Artisan-Alley-Local-Artisan-MarketPlace" target="_blank" class="repository-button">View Project</a>
+                                    <a href="artisan.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/2.png" alt="public-pulse-image" class="project-image">  
+                                <div class="project-info">
+                                  <h3>Public Pulse</h3>
+                                  <p>An AI-Powered Citizen Feedback 
+                                    and Complaint System</p>
+                                    <a href="https://www.behance.net/gallery/205605743/Public-Pulse-An-AI-powered-Citizen-Feedback-System" target="_blank" class="repository-button">View Project</a>
+                                    <a href="public.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/4.png" alt="solara-image" class="project-image solara"> 
+                                <div class="project-info">
+                                  <h3>Solara</h3>
+                                  <p>An AI-Powered Mental 
+                                    Health Companion for Students with personalized features</p>
+                                    <a href="https://www.behance.net/gallery/208762161/Solara-AI-An-AI-powered-Mental-health-Therapist" target="_blank" class="repository-button">View Project</a>
+                                    <a href="solara.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/3.png" alt="anonytix-image" class="project-image">
+                                <div class="project-info">
+                                  <h3>Anonytix</h3>
+                                  <p>An Anonymous Feedback Platform for students to their institutions</p>
+                                    <a href="https://www.behance.net/gallery/211499867/Anonytix-Student-Feedback-Platform" target="_blank" class="repository-button">View Project</a>
+                                    <a href="anonytix.html" target="_blank" class="repository-button">View Details</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/wafcon_brand.png" alt="wafcon_branding">  
+                                <div class="project-info">
+                                  <h3>Branding Concept</h3>
+                                  <p>Branding assets for Women Africa Cup of Nations (WAFCON) 2024</p>
+                                   <a href="https://paper.dropbox.com/doc/VISUAL-ID-Women-African-Cup-of-Nations-WAFCON--Cupx~uJJ6Lc_OsTPm1M7I47WAQ-tWAuy41CR8WkyTr3E6EJR" target="_blank" class="repository-button">View Details</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/banner.png" alt="new media">
+                                <div class="project-info">
+                                    <h3>Social Media Banner</h3>
+                                    <p>Youtube, X and Facebook Banners for BBC Swahili pages</p>
+                                    <a href="https://www.behance.net/gallery/235405265/YoutubeFacebook-Banners-BBC-News" target="_blank" class="repository-button">View Design</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/hausa_day.png" alt="hausa day">
+                                <div class="project-info">
+                                    <h3>Hausa Day</h3>
+                                    <p>Honoring the rich culture, language, and heritage of the Hausa people.</p>
+                                    <a href="https://www.instagram.com/p/DNzic3QQn4B/?utm_source=ig_web_copy_link&igsh=MTZ0czNsamhlNGJ3dg==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/ramadan.png" alt="ramadan">
+                                <div class="project-info">
+                                    <h3>Ramadan Kareem</h3>
+                                    <p>Celebrating the holy month and spreading a message of peace and unity.</p>
+                                    <a href="https://www.instagram.com/reel/DGn8V07sHS7/?utm_source=ig_web_copy_link&igsh=MWJsZWlnbXltNDdreA==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/ukaid.png" alt="UKAID">
+                                <div class="project-info">
+                                    <h3>UKAID</h3>
+                                    <p>Info-graphic highlighting UKAID’s foreign aid contributions to Africa</p>
+                                    <a href="https://www.instagram.com/p/DGnunhQsnBL/?utm_source=ig_web_copy_link&igsh=MXM1aGtxZTFmb2hmZg==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/UK_imig.PNG" alt="uk immigration">
+                                <div class="project-info">
+                                    <h3>UK Immigration</h3>
+                                    <p>Graphic breaking down who would be affected by the UK’s immigration policy</p>
+                                    <a href="https://www.instagram.com/p/DJuN_Ifhlxc/?utm_source=ig_web_copy_link&igsh=Y3hkZjEwd2lrc3hq" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/sudan_war.png" alt="sudan war">
+                                <div class="project-info">
+                                    <h3>Sudan Civil War</h3>
+                                    <p>Informative timeline graphic on the Sudan civil war</p>
+                                    <a href="https://www.instagram.com/p/DHtCUesMp1c/?utm_source=ig_web_copy_link&igsh=MXA3aWpxemduaTh3" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/golden_boot.png" alt="Golden Boot">
+                                <div class="project-info">
+                                    <h3>WAFCON Golden Boot</h3>
+                                    <p>Sports graphic tracking the Golden Boot race for WAFCON 2024</p>
+                                    <a href="https://www.instagram.com/p/DMNiL87TFHF/?utm_source=ig_web_copy_link&igsh=eGt0NjM1aDV3bG93" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/jailed.png" alt="Jailed">
+                                <div class="project-info">
+                                    <h3>Jailed</h3>
+                                    <p>A hard-hitting graphic on how African women are punished for poverty</p>
+                                    <a href="https://www.instagram.com/p/DHdLIMoRC4M/?utm_source=ig_web_copy_link&igsh=YXRycTA5NGdmaDFo" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/s.sudan.png" alt="south sudan">
+                                <div class="project-info">
+                                    <h3>South Sudan rivals</h3>
+                                    <p>Profile graphic on South Sudan’s rival leaders and key facts</p>
+                                    <a href="https://www.instagram.com/p/DHvt75nRBkS/?utm_source=ig_web_copy_link&igsh=MW56Ync5dDJyZjBocA==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="images/new_media.png" alt="new media">
+                                <div class="project-info">
+                                    <h3>New Media</h3>
+                                    <p>Graphics on the rise of citizen journalism and activism across Africa</p>
+                                    <a href="https://www.instagram.com/p/DLcSd3APweU/?utm_source=ig_web_copy_link&igsh=MW41MzZkdWJrcTR0dA==" target="_blank" class="repository-button">View Post</a>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="education-container" id="education" data-aos="fade-up" data-aos-duration="3000">
-                    <h1 class="heading">Education</h1>
-                    <div class="education-details">
-                        <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+            <!-- <div class="education-container" id="education" data-aos="fade-up" data-aos-duration="3000"> -->
+                    <!-- <h1 class="heading">Education</h1>
+                    <div class="education-details"> -->
+                        <!-- <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
                             <h5 class="year">April 2024 - Present</h5>
                             <p>Google UX Design Certificate</p>
                             <a class="repository-button" href="https://drive.google.com/drive/folders/1IIe__oILuooR9ktnNR7MbCQqwMOsVRg0?usp=drive_link" target="_blank">View</a>
-                        </div>
-                        <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+                        </div> -->
+                        <!-- <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
                             <h5 class="year">May 2024 - Dec 2024</h5>
                             <p>Software Development Course at 
                                 Power Learn Project(PLP)
                             </p>
                             <a class="repository-button" href="https://drive.google.com/drive/folders/1eaqY7J6Ykvws-oseqwn4I4JrMdf5lObY?usp=drive_link" target="_blank">View</a>
-                        </div>
-                        <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+                        </div> -->
+                        <!-- <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
                             <h5 class="year">Sept 2020 - Dec 2024</h5>
                             <p>Bachelor of Science in Computer
                                 Science at Kabarak University
                             </p>
                             <a class="repository-button" href="https://drive.google.com/drive/folders/1rwNmG-PJemUR-fQqPXA5IxCFOHJ9AKtw?usp=drive_link" target="_blank">View</a>
-                        </div>
-                        <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+                        </div> -->
+                        <!-- <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
                             <h5 class="year">Aug 2020 - Sept 2021</h5>
                             <p>Software Development Course at 
                                 Moringa School
                             </p>
                             <a class="repository-button" href="https://drive.google.com/drive/folders/1rD5Nmg5mrzwCVmA9Ffcc5z9FtnxaU_gF?usp=drive_link" target="_blank">View</a>
-                        </div>
+                        </div> -->
                         <!-- <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
                             <h5 class="year">Feb 2020 - Mar 2020</h5>
                             <p>Web Design Course at Institute
@@ -275,8 +575,8 @@
                             </p>
                             <a href="" target="_blank">View</a>
                         </div> -->
-                    </div>    
-                </div>  
+                    <!-- </div>    
+                </div>   -->
                 
                 <!-- <div class="experience" id="experience" data-aos="fade-up" data-aos-duration="3000">
                     <h1 class="heading">Experience</h1>
@@ -291,12 +591,12 @@
                     </div>
                 </div> -->
                
-            </div>
+            <!-- </div> -->
 
             <div class="contact" id="contact" data-aos="fade-up" data-aos-duration="3000">
-                <marquee class="heading" scroll-behaviour="smooth"> 
+                <!-- <marquee class="heading" scroll-behaviour="smooth"> 
                     <p>*Get In Touch*</p> 
-                </marquee>
+                </marquee> -->
                 <div class="contact-info">
                     <div class="contact-detail">
                         <i class="fa-solid  fa-phone" style="color: #fff;"></i>
@@ -304,7 +604,7 @@
                         </a>
                     </div>
 
-                    <div class="contact-detail">
+                    <!-- <div class="contact-detail">
                         <a href="https://www.linkedin.com/in/lorraine-wambiru/" target="_blank"><i class="fa-brands fa-linkedin  fa-lg" style="color:#fff;"></i>
                             <p>Lorraine Wambiru</p>
                         </a>
@@ -312,30 +612,36 @@
                     </div>
 
                     <div class="contact-detail">
+                    <a href="https://www.behance.net/lorrainewambui" target="_blank"><i class="fa-brands fa-square-behance fa-lg" style="color: #ffffff;"></i>
+                            <p>Lorraine Wambiru</p>
+                        </a>
+                        
+                    </div> -->
+
+                    <!-- <div class="contact-detail">
                         <a href="https://x.com/wambuiwambiru"  target="_blank"><i class="fa-brands  fa-square-x-twitter fa-lg" style="color: #fff;"></i>
                             <p>@wambuiwambiru</p>
                         </a>
                         
-                    </div>
+                    </div> -->
 
-                    <div class="contact-detail">
+                    <!-- <div class="contact-detail">
                         <a href="https://github.com/WambiruL"  target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #fff;"></i>
                             <p>WambiruL</p>
                         </a>
                         
-                    </div>
+                    </div> -->
 
                     <div class="contact-detail">
                         <a href="mailto:wambirulorraine@gmail.com? subject=Contact%20Request"  target="_blank"><i class="fa-solid fa-envelope fa-lg" style="color: #fff;"></i>
                             <p>wambirulorraine@gmail.com</p>
                         </a>
-                        
                     </div>
                 </div>
             </div>
 
             <div class="footer">
-                <p>@ 2024 Lorraine Wambiru, All rights reserved.</p>
+                <p>@ 2025 Lorraine Wambiru, All rights reserved.</p>
             </div>
         
         </div>        

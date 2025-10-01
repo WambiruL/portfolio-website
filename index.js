@@ -104,3 +104,23 @@ window.onscroll = function () {
 scrollToTopBtn.onclick = function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+//TABS
+function openTab(evt, tabId) {
+  // Hide all tab contents
+  let tabcontent = document.getElementsByClassName("tab-content");
+  for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+  }
+
+  // Remove "active" class from all tabs
+  let tablinks = document.getElementsByClassName("tab-link");
+  for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+  }
+
+  // Show selected tab and mark active
+  document.getElementById(tabId).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+
