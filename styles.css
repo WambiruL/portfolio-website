@@ -24,6 +24,7 @@
 body {
     scrollbar-color: #0C5450 #F5F5DC; /* Thumb and track colors for Firefox */
     scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    
 }
 
 *{
@@ -237,9 +238,11 @@ h1, h2, h3, h4, h6{
 /* HERO SECTION */
 .hero-section {
     text-align: center;
-    background: url(images/hero-back.jpg);
+    background: url(images/back5.jpg); 
     background-color: #138B84;
-    background-size: auto; 
+    background-size:cover; 
+    background-attachment: scroll;
+    background-repeat: repeat;
     background-blend-mode: luminosity;
     height: 110vh;
     display: flex;
@@ -270,6 +273,7 @@ h1, h2, h3, h4, h6{
 .hero-avatar img {
     border-radius: 50%; 
     border: 20px solid #138B84; 
+    background-color: #052523;
     width: 100%;
     max-width: 400px;
     height: auto;
@@ -279,7 +283,7 @@ h1, h2, h3, h4, h6{
 }
 .hero-text h1{
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 900 !important;
 }
 .hero-text p{
     margin-top: 6px;
