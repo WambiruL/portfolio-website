@@ -424,7 +424,7 @@ h1, h2, h3, h4, h6{
   color: #052523 !important;
 }
 .about-color-underline{
-    text-decoration: underline 3px #fff;
+    text-decoration: underline 3px #F5F5DC;
 }
 .image-back{
     position: absolute;
