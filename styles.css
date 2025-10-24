@@ -966,24 +966,34 @@ h1, h2, h3, h4, h6{
   }
   
   .project-card {
-    background: #0C5450;
-    border-radius: 1rem;
+    background: linear-gradient(160deg, #043933, #07594f);
+    /*border-radius: 1rem;*/
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+    background-color: #043933;
+    background-blend-mode: luminosity;
+    
   }
   
   .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
   }
-  
+
   .project-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     display: block;
+    background-color: #043933;
+    background-blend-mode: luminosity;
+    
+  }
+
+  .project-card:hover img{
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   }
   
   .project-info {
