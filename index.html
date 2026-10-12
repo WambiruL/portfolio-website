@@ -39,9 +39,60 @@
         }
 
         main {
+            position: relative;
+            z-index: 1;
             width: 100%;
             max-width: 640px;
             text-align: center;
+        }
+
+        canvas#ink {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .cursor-dot,
+        .cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--moss);
+            z-index: 9999;
+        }
+
+        .cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(137, 152, 120, 0.5);
+            z-index: 9998;
+            transition: opacity 0.4s ease, width 0.4s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+
+        .cursor-ring.hovered {
+            width: 60px;
+            height: 60px;
+            border-color: var(--moss);
+        }
+
+        .cursor-on .cursor-dot,
+        .cursor-on .cursor-ring { opacity: 1; }
+
+        @media (pointer: fine) {
+            body, a.cta { cursor: none; }
         }
 
 
@@ -110,6 +161,10 @@
     </style>
 </head>
 <body>
+    <canvas id="ink" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
     <main>
         <p class="hello">Oh, hello! It's Lorraine Wambiru.</p>
         <h1>You've caught me <em>in the middle of a move.</em></h1>
@@ -118,5 +173,182 @@
             Come see <span class="arrow" aria-hidden="true">&rarr;</span>
         </a>
     </main>
+
+    <script>
+        // Soft cursor: a dot that follows instantly and a ring that trails behind it.
+        (function () {
+            if (window.matchMedia("(pointer: coarse)").matches) return;
+            var dot = document.querySelector(".cursor-dot");
+            var ring = document.querySelector(".cursor-ring");
+            var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0, seen = false;
+
+            window.addEventListener("mousemove", function (e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                dot.style.left = mouseX + "px";
+                dot.style.top = mouseY + "px";
+                if (!seen) {
+                    seen = true;
+                    ringX = mouseX;
+                    ringY = mouseY;
+                    document.body.classList.add("cursor-on");
+                }
+            });
+
+            (function follow() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                ring.style.left = ringX + "px";
+                ring.style.top = ringY + "px";
+                requestAnimationFrame(follow);
+            })();
+
+            document.querySelectorAll("a").forEach(function (el) {
+                el.addEventListener("mouseenter", function () { ring.classList.add("hovered"); });
+                el.addEventListener("mouseleave", function () { ring.classList.remove("hovered"); });
+            });
+        })();
+
+        // Background: soft organic shapes that drift, breathe and fade.
+        (function () {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            var canvas = document.getElementById("ink");
+            var ctx = canvas.getContext("2d");
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            var BLOB_COUNT = 3;
+            var scale = function () { return Math.max(Math.min(width, height) / 900, 0.5); };
+
+            function createBlob(forced) {
+                forced = forced || {};
+                var x = forced.x !== undefined ? forced.x : Math.random() * width;
+                var y = forced.y !== undefined ? forced.y : Math.random() * height;
+                var points = [];
+                for (var i = 0; i < 8; i++) {
+                    points.push({
+                        angle: (i / 8) * Math.PI * 2,
+                        radiusOffset: (Math.random() - 0.5) * 40,
+                        speed: (Math.random() - 0.5) * 0.008
+                    });
+                }
+                return {
+                    x: x, y: y,
+                    vx: (Math.random() - 0.5) * 0.09,
+                    vy: (Math.random() - 0.5) * 0.09,
+                    radius: (Math.random() * 260 + 220) * scale(),
+                    targetRadius: (Math.random() * 300 + 200) * scale(),
+                    opacity: forced.opacity !== undefined ? forced.opacity : 0,
+                    targetOpacity: Math.random() * 0.035 + 0.015,
+                    morphAngle: Math.random() * Math.PI * 2,
+                    morphSpeed: Math.random() * 0.003 + 0.001,
+                    points: points
+                };
+            }
+
+            var blobs = [];
+            for (var i = 0; i < BLOB_COUNT; i++) {
+                blobs.push(createBlob({
+                    x: (width / BLOB_COUNT) * i + Math.random() * (width / BLOB_COUNT),
+                    y: Math.random() * height,
+                    opacity: Math.random() * 0.02
+                }));
+            }
+
+            function drawBlob(blob) {
+                if (blob.opacity <= 0.002) return;
+                blob.points.forEach(function (p) {
+                    p.radiusOffset += p.speed;
+                    if (Math.abs(p.radiusOffset) > 45) p.speed *= -1;
+                });
+                blob.morphAngle += blob.morphSpeed;
+
+                var n = blob.points.length;
+                var coords = blob.points.map(function (p, i) {
+                    var angle = (i / n) * Math.PI * 2 + blob.morphAngle;
+                    var r = blob.radius + p.radiusOffset;
+                    return { x: blob.x + Math.cos(angle) * r, y: blob.y + Math.sin(angle) * r };
+                });
+
+                ctx.beginPath();
+                coords.forEach(function (pt, i) {
+                    var prev = coords[(i - 1 + n) % n];
+                    var next = coords[(i + 1) % n];
+                    var prev2 = coords[(i - 2 + n) % n];
+                    var cpx1 = prev.x + (pt.x - prev2.x) * 0.18;
+                    var cpy1 = prev.y + (pt.y - prev2.y) * 0.18;
+                    var cpx2 = pt.x - (next.x - prev.x) * 0.18;
+                    var cpy2 = pt.y - (next.y - prev.y) * 0.18;
+                    if (i === 0) ctx.moveTo(pt.x, pt.y);
+                    else ctx.bezierCurveTo(cpx1, cpy1, cpx2, cpy2, pt.x, pt.y);
+                });
+                ctx.closePath();
+
+                var grad = ctx.createRadialGradient(blob.x, blob.y, 0, blob.x, blob.y, blob.radius * 1.4);
+                grad.addColorStop(0, "rgba(34, 39, 37, " + (blob.opacity * 7) + ")");
+                grad.addColorStop(0.25, "rgba(34, 39, 37, " + (blob.opacity * 5) + ")");
+                grad.addColorStop(0.5, "rgba(40, 52, 40, " + (blob.opacity * 3) + ")");
+                grad.addColorStop(0.75, "rgba(60, 74, 58, " + (blob.opacity * 1.5) + ")");
+                grad.addColorStop(1, "rgba(137, 152, 120, 0)");
+                ctx.fillStyle = grad;
+                ctx.fill();
+            }
+
+            function update() {
+                blobs.forEach(function (blob) {
+                    blob.x += blob.vx;
+                    blob.y += blob.vy;
+
+                    blob.radius += (blob.targetRadius - blob.radius) * 0.003;
+                    if (Math.abs(blob.radius - blob.targetRadius) < 5) {
+                        blob.targetRadius = (Math.random() * 300 + 160) * scale();
+                    }
+
+                    blob.opacity += (blob.targetOpacity - blob.opacity) * 0.008;
+                    if (Math.abs(blob.opacity - blob.targetOpacity) < 0.002) {
+                        blob.targetOpacity = Math.random() * 0.035 + 0.015;
+                    }
+
+                    var margin = 200;
+                    if (blob.x < -margin) { blob.x = width + margin * 0.5; blob.targetOpacity = 0; }
+                    if (blob.x > width + margin) { blob.x = -margin * 0.5; blob.targetOpacity = 0; }
+                    if (blob.y < -margin) { blob.y = height + margin * 0.5; blob.targetOpacity = 0; }
+                    if (blob.y > height + margin) { blob.y = -margin * 0.5; blob.targetOpacity = 0; }
+
+                    blob.vx += (0.5 - blob.x / width) * 0.0003;
+                    blob.vy += (0.5 - blob.y / height) * 0.0003;
+
+                    var maxV = 0.25;
+                    blob.vx = Math.max(-maxV, Math.min(maxV, blob.vx));
+                    blob.vy = Math.max(-maxV, Math.min(maxV, blob.vy));
+                });
+            }
+
+            function render() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalCompositeOperation = "multiply";
+                blobs.forEach(drawBlob);
+                ctx.globalCompositeOperation = "source-over";
+                update();
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+
+            window.addEventListener("resize", function () {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+                blobs.forEach(function (blob) {
+                    blob.x = Math.random() * width;
+                    blob.y = Math.random() * height;
+                    blob.radius = (Math.random() * 260 + 180) * scale();
+                    blob.targetRadius = (Math.random() * 300 + 160) * scale();
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
