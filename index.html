@@ -98,9 +98,9 @@
 
         img.avatar {
             display: block;
-            width: 96px;
+            width: clamp(88px, 22vw, 112px);
             height: auto;
-            margin: 0 auto 18px;
+            margin: 0 auto 14px;
             animation: avatar-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
         }
 
@@ -114,14 +114,15 @@
         }
 
         p.hello {
-            margin: 0 0 24px;
-            font-size: 1.05rem;
-            letter-spacing: 0.02em;
-            color: rgba(228, 230, 195, 0.6);
+            margin: 0 0 36px;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            color: rgba(228, 230, 195, 0.55);
         }
 
         h1 {
-            margin: 0 0 28px;
+            margin: 0 0 20px;
+            text-wrap: balance;
             font-family: "Fraunces", Georgia, serif;
             font-weight: 300;
             font-size: clamp(2.1rem, 6vw, 3.4rem);
@@ -130,15 +131,16 @@
         }
 
         h1 em {
+            display: inline-block;
             font-style: italic;
             color: rgba(137, 152, 120, 0.9);
         }
 
         p.copy {
-            margin: 0 auto 44px;
+            margin: 0 auto 48px;
             max-width: 480px;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: rgba(228, 230, 195, 0.6);
         }
 
@@ -146,7 +148,7 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 16px 28px;
+            padding: 17px 32px;
             border: 1px solid rgba(137, 152, 120, 0.45);
             color: var(--moss);
             text-decoration: none;
